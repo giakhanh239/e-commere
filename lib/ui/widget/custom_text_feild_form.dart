@@ -6,8 +6,8 @@ import 'package:flutter_app_e_commere_design/ui/theme/app_style.dart';
 class CustomTextFeildForm extends StatefulWidget {
   final String hintText;
   final TextEditingController textEditingController;
-
-  const CustomTextFeildForm({Key key, this.hintText, this.textEditingController}) : super(key: key);
+  final bool enable;
+  const CustomTextFeildForm({Key key,this.enable=true, this.hintText, this.textEditingController}) : super(key: key);
 
   @override
   _CustomTextFeildFormState createState() => _CustomTextFeildFormState();
@@ -25,6 +25,7 @@ class _CustomTextFeildFormState extends State<CustomTextFeildForm> {
         borderRadius: BorderRadius.circular(5),
       ),
       child: TextFormField(
+        enabled: widget.enable,
         controller: widget.textEditingController ?? TextEditingController(),
         style: AppStyle.TEXT_FORM,
         decoration: InputDecoration(

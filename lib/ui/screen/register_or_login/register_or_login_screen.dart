@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_e_commere_design/ui/screen/login/login_screen.dart';
-import 'package:flutter_app_e_commere_design/ui/screen/register/register_screen.dart';
+import 'package:flutter_app_e_commere_design/routes/router.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_color.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_image.dart';
 import 'package:flutter_app_e_commere_design/ui/widget/common_button.dart';
@@ -26,45 +25,49 @@ class RegisterOrLoginScreen extends StatelessWidget{
               children: <Widget>[
                 Expanded(child: SizedBox()),
                 Text(
-                    "The Right Address For Shopping Anyday",
+                  'theRigtAddressRegisOrLogin'.tr,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 28,
-                    fontWeight: FontWeight.w500
+                    fontWeight: FontWeight.w400
                   ),
                 ),
                 SizedBox(height: 12,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 35),
                   child: Text(
-                      'It is now very easy to reach the best quality among all the products on the internet!',
+                      'reachTheBestQualityRegisOrLogin'.tr,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 12,
-
+                        height: 1.5,
                       ),
                   ),
                 ),
                 SizedBox(height: 30,),
-                Row(
-                  children: <Widget>[
-                      CommonButton(
-                        onTap: (){
-                          Get.to(RegisterScreen());
-                        },
-                        content: "Register",
-                        buttonColor: AppColors.commonButtonColor,
-                        textColor: Colors.white,
-                      ),
-                      CommonButton(
-                        onTap: (){
-                          Get.to(LoginScreen());
-                        },
-                        content: "Log In",
-                        textColor: Colors.black,
-                        buttonColor: AppColors.subButtonColors,
-                      ),
-                  ],
+                Container(
+
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                        CommonButton(
+                          onTap: (){
+                            Get.toNamed(RouteName.register);
+                          },
+                          content: 'register'.tr,
+                          buttonColor: AppColors.commonButtonColor,
+                          textColor: Colors.white,
+                        ),
+                        CommonButton(
+                          onTap: (){
+                            Get.toNamed(RouteName.login);
+                          },
+                          content: 'logIn'.tr,
+                          textColor: Colors.black,
+                          buttonColor: AppColors.subButtonColors,
+                        ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).padding.bottom + 20,

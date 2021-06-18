@@ -14,13 +14,13 @@ class NextButton extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: (){onTap?.call();},
       child: Container(
         height: height,
         width: width,
         child: Center(
           child: Text(
-            content,
+            content??"",
             style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w700,

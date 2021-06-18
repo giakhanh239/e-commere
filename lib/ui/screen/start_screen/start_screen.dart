@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_e_commere_design/ui/screen/register_or_login/register_or_login_screen.dart';
+import 'package:flutter_app_e_commere_design/routes/router.dart';
 import 'package:flutter_app_e_commere_design/ui/screen/start_screen/widget/next_button.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_color.dart';
-import 'package:flutter_app_e_commere_design/ui/theme/app_image.dart';
 import 'package:flutter_app_e_commere_design/ui/widget/swiper/app_swiper.dart';
 import 'package:get/get.dart';
 
@@ -20,10 +19,11 @@ class StartScreen extends StatelessWidget {
           ),
           Expanded(child: SizedBox()),
           Text(
-            "The Right Address For Shopping Anyday",
+            'theRightAddress'.tr,
             textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 28,
+                height: 1.5,
                 fontWeight: FontWeight.w400
             ),
           ),
@@ -31,7 +31,7 @@ class StartScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Text(
-              'It is now very easy to reach the best quality among all the products on the internet!',
+              'reachTheBestQuality'.tr,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 11,
@@ -42,9 +42,9 @@ class StartScreen extends StatelessWidget {
           SizedBox(height: 30,),
           NextButton(
             onTap: (){
-              Get.to(RegisterOrLoginScreen());
+              Get.toNamed(RouteName.loginOrRegister);
             },
-            content: "Next",
+            content: 'next'.tr,
             textColor: AppColors.commonButtonColor,
           ),
           SizedBox(

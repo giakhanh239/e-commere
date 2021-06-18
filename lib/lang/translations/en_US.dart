@@ -1,0 +1,17 @@
+final Map<String,String> enUS= <String, String>{
+  'theRightAddress':'The Right Address For \n Shopping Anyday',
+  'reachTheBestQuality':'It is now very easy to reach the best quality \n among all the products on the internet!',
+  'theRigtAddressRegisOrLogin':'The Right Address \n For Shopping \n Anyday',
+  'reachTheBestQualityRegisOrLogin':'It is now very easy to reach the best \n quality among all the products on the \n internet!',
+  'next':'Next',
+  'register':'Register',
+  'logIn':'Log In',
+  'firstName':'First Name',
+  'lastName':'Last Name',
+  'email':'Email',
+  'password':'Password',
+  'facebook':'Facebook',
+  'gmail':'Gmail',
+  'letsRegister':"Let's Register",
+  'haveAnAccount':"Do you have an account? Login",
+};
