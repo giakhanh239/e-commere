@@ -15,19 +15,17 @@ class StartScreen extends StatelessWidget {
           Container(
               height: 400,
               width: MediaQuery.of(context).size.width,
-              child: AppSwiper()
-          ),
+              child: AppSwiper()),
           Expanded(child: SizedBox()),
           Text(
             'theRightAddress'.tr,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 28,
-                height: 1.5,
-                fontWeight: FontWeight.w400
-            ),
+                fontSize: 28, height: 1.5, fontWeight: FontWeight.w400),
           ),
-          SizedBox(height: 12,),
+          SizedBox(
+            height: 12,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 60),
             child: Text(
@@ -39,18 +37,19 @@ class StartScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
           NextButton(
-            onTap: (){
+            onTap: () {
               Get.toNamed(RouteName.loginOrRegister);
             },
             content: 'next'.tr,
             textColor: AppColors.commonButtonColor,
           ),
           SizedBox(
-            height: MediaQuery.of(context).padding.bottom + 60,
+            height: MediaQuery.of(context).padding.bottom + 50,
           ),
-
         ],
       ),
     );

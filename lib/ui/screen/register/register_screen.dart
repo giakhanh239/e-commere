@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_e_commere_design/ui/screen/register/register_screen_controller.dart';
+import 'package:flutter_app_e_commere_design/ui/screen/top_level.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_color.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_image.dart';
 import 'package:flutter_app_e_commere_design/ui/widget/common_button.dart';
 import 'package:flutter_app_e_commere_design/ui/widget/custom_text_feild_form.dart';
+import 'package:flutter_app_e_commere_design/ui/widget/loading_dialog.dart';
 import 'package:flutter_app_e_commere_design/ui/widget/social_login_button.dart';
 import 'package:get/get.dart';
 class RegisterScreen extends StatelessWidget {
@@ -28,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
@@ -49,7 +51,7 @@ class RegisterScreen extends StatelessWidget {
                       Container(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'haveAnAcount'.tr,
+                          'haveAnAccount'.tr,
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 12,
@@ -80,7 +82,8 @@ class RegisterScreen extends StatelessWidget {
                       SizedBox(height: 10,),
                       CommonButton(
                         onTap: (){
-                          _controller.registerAPI();
+                          showLoading();
+                          _controller.getRegisterData();
                         },
                         unable: _controller.isLoading.value,
                         width: 310,
@@ -97,15 +100,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              _controller.isLoading==true ?
-              Center(
-                child: Container(
-                  height: 200,
-                  width: 200,
-                  child: CircularProgressIndicator(strokeWidth: 30,),),
-              )
-                  :
-              Container(),
+
             ],
           ),
         ),

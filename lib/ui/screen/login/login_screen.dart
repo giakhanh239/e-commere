@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_e_commere_design/ui/screen/login/login_screen_controller.dart';
+import 'package:flutter_app_e_commere_design/ui/screen/top_level.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_color.dart';
 import 'package:flutter_app_e_commere_design/ui/theme/app_image.dart';
 import 'package:flutter_app_e_commere_design/ui/widget/common_button.dart';
@@ -70,7 +71,8 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(height: 30,),
                       CommonButton(
                         onTap: (){
-                          _controller.loginAPI();
+                          showLoading();
+                          _controller.getLoginData();
                         },
                         unable: _controller.isLoading.value,
                         width: 310,
@@ -87,16 +89,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              _controller.isLoading==true ?
-                  Center(
-                    child: Container(
-                      height: 200,
-                        width: 200,
-                        child: CircularProgressIndicator(strokeWidth: 30,),),
-                  )
-                  :
-                  Container(),
-
             ],
           ),
         ),
